@@ -1,0 +1,890 @@
+/* =============================================
+   IGNITE ORGANIZATION - MAIN STYLESHEET
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --orange: #E8730A;
+  --orange-dark: #C5600A;
+  --orange-light: #FF9A3C;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --dark-card: #1A1A1A;
+  --white: #FFFFFF;
+  --gray: #888888;
+  --light-gray: #F5F5F5;
+  --text-dark: #1C1C1C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 70px;
+  border-bottom: 1px solid rgba(232,115,10,0.2);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* =============================================
+   LOGO PLACEHOLDER - WEKA LOGO YAKO HAPA
+   Badilisha <img> tag hii na logo yako halisi
+   ============================================= */
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--orange);
+  /* Hii ni placeholder - weka src="path/to/your-logo.png" */
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.logo-tagline {
+  font-size: 9px;
+  color: var(--orange);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 3px;
+  transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--orange);
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid var(--orange);
+}
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-social a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: transform 0.3s;
+  color: white;
+}
+
+.nav-social a:hover { transform: scale(1.15); }
+.nav-social a.yt { background: #FF0000; }
+.nav-social a.tt { background: #000; border: 1px solid #fff; }
+.nav-social a.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.nav-social a.fb { background: #1877F2; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+.hamburger span {
+  width: 25px; height: 2px;
+  background: white;
+  transition: all 0.3s;
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-slides { position: absolute; inset: 0; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.slide.active { opacity: 1; }
+
+/* =============================================
+   HERO SLIDES - WEKA PICHA ZAKO HAPA
+   Kila .slide-bg inahitaji picha yako halisi
+   ============================================= */
+.slide-bg {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  /* 
+    JINSI YA KUBADILISHA:
+    Badilisha style="background: ..." na:
+    <img src="images/hero-1.jpg" alt="Hero Image" class="slide-bg-img">
+    au weka: background-image: url('images/hero-1.jpg');
+  */
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 80px;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(60px, 10vw, 110px);
+  color: var(--orange);
+  letter-spacing: 4px;
+  line-height: 0.9;
+  animation: slideUp 0.8s ease forwards;
+}
+
+.hero-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(18px, 3vw, 28px);
+  color: var(--white);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 12px 0;
+  animation: slideUp 0.9s ease forwards;
+}
+
+.hero-content p {
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 380px;
+  animation: slideUp 1s ease forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232,115,10,0.4);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 2px solid white;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn-outline:hover { background: white; color: var(--black); }
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--black);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: all 0.3s;
+  border: 2px solid var(--black);
+}
+.btn-dark:hover { background: transparent; color: var(--black); border-color: var(--black); }
+
+.hero-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dot.active { background: var(--orange); transform: scale(1.3); }
+
+.hero-nav {
+  position: absolute;
+  top: 50%; z-index: 5;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+.hero-nav:hover { background: var(--orange); border-color: var(--orange); }
+.hero-prev { left: 20px; }
+.hero-next { right: 20px; }
+
+/* ---- SECTIONS ---- */
+section { padding: 80px 0; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.section-title .highlight { color: var(--orange); }
+
+.section-title.white { color: var(--white); }
+
+.underline-bar {
+  width: 50px; height: 4px;
+  background: var(--orange);
+  margin: 12px 0 20px;
+}
+
+/* ---- ABOUT SECTION ---- */
+.about-section { background: var(--white); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-left p {
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  background: var(--white);
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.info-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(232,115,10,0.1);
+}
+
+.card-icon {
+  width: 55px; height: 55px;
+  margin: 0 auto 15px;
+  background: rgba(232,115,10,0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.info-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.info-card p {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ---- ACTIVITIES ---- */
+.activities-section {
+  background: var(--dark);
+  padding: 80px 0;
+}
+
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.activity-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  group: true;
+}
+
+/* =============================================
+   ACTIVITY CARDS - WEKA PICHA ZAKO HAPA
+   Kila .activity-img inahitaji picha yako
+   ============================================= */
+.activity-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  /*
+    JINSI YA KUBADILISHA:
+    <img src="images/activity-1.jpg" alt="Education" class="activity-img">
+    au weka background-image kwenye div
+  */
+}
+
+.activity-card:hover .activity-img { transform: scale(1.05); }
+
+.activity-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, transparent 100%);
+  padding: 60px 16px 16px;
+}
+
+.activity-badge {
+  width: 38px; height: 38px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.activity-overlay h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.activity-overlay p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+/* ---- GALLERY ---- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* =============================================
+   GALLERY - WEKA PICHA ZAKO HAPA
+   Kila .gallery-item inahitaji picha yako
+   ============================================= */
+.gallery-item {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  /*
+    JINSI YA KUBADILISHA:
+    <img src="images/gallery-1.jpg" alt="Gallery" class="gallery-img">
+    Weka picha yako halisi ndani ya kila gallery-item
+  */
+}
+
+.gallery-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-img { transform: scale(1.08); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(232,115,10,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 28px;
+  color: white;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* ---- VIDEO SECTION ---- */
+.video-section { background: var(--light-gray); }
+
+.video-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+}
+
+/* =============================================
+   VIDEO SECTION - WEKA VIDEO YAKO HAPA
+   Badilisha embed URL au thumbnail
+   ============================================= */
+.video-thumbnail {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  /*
+    JINSI YA KUBADILISHA:
+    Option 1 - YouTube: badilisha src ya iframe
+    Option 2 - Thumbnail: weka picha yako
+    <img src="images/video-thumb.jpg" class="video-thumbnail">
+  */
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px; height: 70px;
+  background: rgba(232,115,10,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 3px solid white;
+}
+.play-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
+
+/* ---- CTA BANNER ---- */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+/* =============================================
+   CTA BACKGROUND - WEKA PICHA YAKO HAPA
+   ============================================= */
+.cta-bg {
+  position: absolute; inset: 0;
+  /*
+    JINSI YA KUBADILISHA:
+    background-image: url('images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    Kisha ongeza overlay kwa urembo
+  */
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
+}
+
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.cta-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: white;
+  letter-spacing: 2px;
+}
+
+.cta-text p { color: rgba(255,255,255,0.85); font-size: 16px; }
+
+/* ---- STATS ---- */
+.stats-section { background: var(--black); padding: 60px 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-item { padding: 20px; }
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--dark);
+  padding: 60px 0 20px;
+  border-top: 3px solid var(--orange);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand p {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 15px 0;
+}
+
+.footer-col h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 15px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+.footer-col ul li a:hover { color: var(--orange); }
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+}
+
+.contact-item span:first-child { color: var(--orange); margin-top: 2px; }
+
+/* =============================================
+   SOCIAL MEDIA LINKS - WEKA LINKS ZAKO HAPA
+   Badilisha href="#" na link zako halisi
+   ============================================= */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  transition: all 0.3s;
+  padding: 6px 0;
+}
+
+.social-link:hover { color: white; transform: translateX(5px); }
+
+.social-icon {
+  width: 30px; height: 30px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.s-yt { background: #FF0000; }
+.s-tt { background: #010101; border: 1px solid #333; }
+.s-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+.s-fb { background: #1877F2; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p { color: rgba(255,255,255,0.3); font-size: 12px; }
+
+/* ---- IMAGE PLACEHOLDER STYLES ---- */
+.img-placeholder {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex;
+  flex-direction: direction;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 13px;
+  text-align: center;
+  gap: 10px;
+  border: 2px dashed rgba(232,115,10,0.3);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.img-placeholder .ph-icon { font-size: 36px; opacity: 0.4; }
+.img-placeholder .ph-text { font-size: 11px; letter-spacing: 1px; opacity: 0.6; }
+
+/* ---- ANIMATIONS ---- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- PAGE HEADER (for inner pages) ---- */
+.page-header {
+  padding: 140px 0 60px;
+  background: var(--dark);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--orange);
+}
+
+.page-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 7vw, 80px);
+  color: white;
+  letter-spacing: 4px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+.breadcrumb a { color: var(--orange); text-decoration: none; }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 992px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .cards-grid { grid-template-columns: repeat(3, 1fr); }
+  .activities-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--dark); padding: 20px; }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .nav-social { display: none; }
+  .hero-content { padding: 0 30px; }
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .activities-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-content { flex-direction: column; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .activities-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+}
+
+@media (max-width: 480px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .activities-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}

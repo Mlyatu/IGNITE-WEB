@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – IGNITE Foundation</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:40px; }
+    .team-card { text-align:center; }
+    .team-photo { width:100%; aspect-ratio:1; border-radius:10px; overflow:hidden; margin-bottom:15px; position:relative; }
+    .team-photo img, .team-photo .img-placeholder { width:100%; height:100%; object-fit:cover; }
+    .team-card h3 { font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:var(--text-dark); }
+    .team-card p { font-size:13px; color:var(--orange); font-weight:600; letter-spacing:1px; text-transform:uppercase; }
+    .timeline { position:relative; padding-left:30px; }
+    .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:var(--orange); }
+    .timeline-item { position:relative; margin-bottom:35px; }
+    .timeline-item::before { content:''; position:absolute; left:-26px; top:5px; width:12px; height:12px; border-radius:50%; background:var(--orange); border:3px solid white; box-shadow:0 0 0 2px var(--orange); }
+    .timeline-item h4 { font-family:'Montserrat',sans-serif; font-weight:700; color:var(--orange); font-size:14px; margin-bottom:5px; }
+    .timeline-item p { font-size:14px; color:var(--gray); line-height:1.6; }
+    @media(max-width:768px){ .team-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:480px){ .team-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+
+    <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+    <div class="logo-text">
+      <span class="logo-name">IGNITE</span>
+      <span class="logo-tagline">Foundation</span>
+    </div>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="activities.html">Activities</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+
+
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- INTERNAL STYLING -->
+  <style>
+
+    /* NAV SOCIAL CONTAINER */
+    .nav-social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ICON BUTTON STYLE */
+    .nav-social a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #222;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    /* HOVER EFFECT */
+    .nav-social a:hover {
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    /* BRAND COLORS */
+    .nav-social .yt:hover {
+      background: #FF0000;
+    }
+
+    .nav-social .tt:hover {
+      background: #000000;
+    }
+
+    .nav-social .ig:hover {
+      background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    }
+
+    .nav-social .fb:hover {
+      background: #1877F2;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- SOCIAL ICONS -->
+<div class="nav-social">
+
+  <a href="#" class="yt" title="YouTube" target="_blank" rel="noopener">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="#" class="tt" title="TikTok" target="_blank" rel="noopener">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="#" class="ig" title="Instagram" target="_blank" rel="noopener">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="#" class="fb" title="Facebook" target="_blank" rel="noopener">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+</div>
+
+</body>
+</html>
+
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>About Us</h1>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <span>About</span>
+    </div>
+  </div>
+
+  <!-- Who We Are -->
+  <section style="background:white;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+        <div class="fade-in">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title">Who We <span class="highlight">Are</span></h2>
+          <div class="underline-bar"></div>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:15px;font-size:15px;">
+            Ignite Foundation is a youth-driven initiative dedicated to empowering young people and transforming communities through education, creativity, technology, and social impact projects.
+          </p>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:25px;font-size:15px;">
+            We believe in the power of youth to ignite change and build a better future for all. Founded on the principles of empowerment and community service, we work tirelessly to create opportunities for every young person to reach their full potential.
+          </p>
+          <a href="contact.html" class="btn-primary">Join Us &rarr;</a>
+        </div>
+
+        <!--
+          =============================================
+          ABOUT IMAGE - WEKA PICHA YAKO HAPA
+          <img src="../images/about-main.jpg" alt="About IGNITE" style="width:100%;border-radius:12px;object-fit:cover;height:400px;">
+          =============================================
+        -->
+        <div class="img-placeholder fade-in" style="height:400px;border-radius:12px;">
+          <span class="ph-icon">🖼️</span>
+          <span class="ph-text">WEKA PICHA YAKO HAPA<br>About main image — 600×400px</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission, Vision, Values -->
+  <section style="background:var(--light-gray);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span class="section-label">Our Foundation</span>
+        <h2 class="section-title">What <span class="highlight">Drives Us</span></h2>
+      </div>
+      <div class="cards-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="info-card fade-in">
+          <div class="card-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To empower youth with skills, opportunities, and confidence to create positive change in their communities and beyond.</p>
+        </div>
+        <div class="info-card fade-in">
+          <div class="card-icon">👁️</div>
+          <h3>Our Vision</h3>
+          <p>A world where every young person has the opportunity to reach their full potential and contribute meaningfully to society.</p>
+        </div>
+        <div class="info-card fade-in">
+          <div class="card-icon">❤️</div>
+          <h3>Our Values</h3>
+          <p>Empowerment, Integrity, Innovation, Collaboration, and Impact guide everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section style="background:white;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:10px;">
+        <span class="section-label">Our People</span>
+        <h2 class="section-title">Meet the <span class="highlight">Team</span></h2>
+        <div class="underline-bar" style="margin:12px auto;"></div>
+      </div>
+
+      <div class="team-grid">
+        <!--
+          =============================================
+          TEAM MEMBER 1 - WEKA PICHA NA JINA
+          Badilisha div.img-placeholder na:
+          <img src="../images/team-1.jpg" alt="Team Member" class="team-member-img">
+          =============================================
+        -->
+        <div class="team-card fade-in">
+          <div class="team-photo">
+            <div class="img-placeholder" style="height:200px;">
+              <span class="ph-icon">👤</span>
+              <span class="ph-text">PICHA — Member 1<br>200×200px</span>
+            </div>
+          </div>
+          <h3>Jina la Mwanachama</h3>
+          <p>Founder & Director</p>
+        </div>
+
+        <div class="team-card fade-in">
+          <div class="team-photo">
+            <div class="img-placeholder" style="height:200px;">
+              <span class="ph-icon">👤</span>
+              <span class="ph-text">PICHA — Member 2<br>200×200px</span>
+            </div>
+          </div>
+          <h3>Jina la Mwanachama</h3>
+          <p>Programs Manager</p>
+        </div>
+
+        <div class="team-card fade-in">
+          <div class="team-photo">
+            <div class="img-placeholder" style="height:200px;">
+              <span class="ph-icon">👤</span>
+              <span class="ph-text">PICHA — Member 3<br>200×200px</span>
+            </div>
+          </div>
+          <h3>Jina la Mwanachama</h3>
+          <p>Community Lead</p>
+        </div>
+
+        <div class="team-card fade-in">
+          <div class="team-photo">
+            <div class="img-placeholder" style="height:200px;">
+              <span class="ph-icon">👤</span>
+              <span class="ph-text">PICHA — Member 4<br>200×200px</span>
+            </div>
+          </div>
+          <h3>Jina la Mwanachama</h3>
+          <p>Tech Coordinator</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section style="background:var(--dark);">
+    <div class="container" style="max-width:700px;">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span class="section-label">Our Journey</span>
+        <h2 class="section-title white">How We <span class="highlight">Grew</span></h2>
+        <div class="underline-bar" style="margin:12px auto;"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <h4>2020 — Founded</h4>
+          <p>Ignite Foundation was established with a vision to empower youth across Tanzania.</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>2021 — First Programs</h4>
+          <p>Launched our first education and training programs serving over 100 youth.</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>2022 — Community Expansion</h4>
+          <p>Expanded to 10 communities, running innovation and leadership workshops.</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>2023 — Major Milestones</h4>
+          <p>Reached 300+ youth, completed 30 community projects, launched tech programs.</p>
+        </div>
+        <div class="timeline-item fade-in">
+          <h4>2024 — Growing Impact</h4>
+          <p>500+ youth empowered, 50+ projects, partnership with national Foundations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+   <div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+
+      <a href="../index.html" class="nav-logo">
+
+        <!-- FOOTER LOGO IMAGE -->
+        <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+        <div class="logo-text">
+          <span class="logo-name">IGNITE</span>
+          <span class="logo-tagline">Foundation</span>
+        </div>
+
+      </a>
+
+      <p>
+        Empowering youth.
+        Transforming communities.<br>
+        Creating a better future.
+      </p>
+
+    </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-item"><span>📍</span><span>123 Ignite Street, Dar es Salaam</span></div>
+          <div class="contact-item"><span>📞</span><span>+255 123 456 789</span></div>
+          <div class="contact-item"><span>✉️</span><span>info@igniteorg.org</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <!-- BADILISHA href na links zako halisi -->
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-yt">▶</div><span>YouTube</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-tt">♪</div><span>TikTok</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-ig">📷</div><span>Instagram</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-fb">f</div><span>Facebook</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ignite Foundation. All Rights Reserved.</p>
+        <p>Designed with ❤️ by Ignite Team</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

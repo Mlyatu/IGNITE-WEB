@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Activities – IGNITE Organization</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .activities-full-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; margin-top:30px; }
+    .act-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s; }
+    .act-card:hover { transform:translateY(-6px); }
+    .act-card-img { width:100%; height:240px; object-fit:cover; display:block; }
+    .act-card-body { padding:24px; }
+    .act-card-body h3 { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:var(--text-dark); margin-bottom:10px; }
+    .act-card-body p { color:var(--gray); font-size:14px; line-height:1.7; }
+    .act-tag { display:inline-block; background:rgba(232,115,10,0.1); color:var(--orange); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; margin-bottom:10px; }
+    @media(max-width:768px){ .activities-full-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+
+    <!-- LOGO IMAGE -->
+    <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+    <div class="logo-text">
+      <span class="logo-name">IGNITE</span>
+      <span class="logo-tagline">Foundation</span>
+    </div>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="activities.html" class="active">Activities</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IGNITE Navbar</title>
+
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- INTERNAL STYLING -->
+  <style>
+
+    /* NAV SOCIAL CONTAINER */
+    .nav-social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ICON BUTTON STYLE */
+    .nav-social a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #222;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    /* HOVER EFFECT */
+    .nav-social a:hover {
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    /* BRAND COLORS */
+    .nav-social .yt:hover {
+      background: #FF0000;
+    }
+
+    .nav-social .tt:hover {
+      background: #000000;
+    }
+
+    .nav-social .ig:hover {
+      background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    }
+
+    .nav-social .fb:hover {
+      background: #1877F2;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- SOCIAL ICONS -->
+<div class="nav-social">
+
+  <a href="#" class="yt" title="YouTube" target="_blank" rel="noopener">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="#" class="tt" title="TikTok" target="_blank" rel="noopener">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="#" class="ig" title="Instagram" target="_blank" rel="noopener">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="#" class="fb" title="Facebook" target="_blank" rel="noopener">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+</div>
+
+</body>
+</html>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+  <div class="page-header">
+    <h1>Our Activities</h1>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><span>Activities</span>
+    </div>
+  </div>
+
+  <section style="background:var(--light-gray);">
+    <div class="container">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Our <span class="highlight">Programs</span></h2>
+      <div class="underline-bar"></div>
+
+      <div class="activities-full-grid">
+        <!--
+          =============================================
+          ACTIVITY CARDS - WEKA PICHA ZAKO HAPA
+          Badilisha kila div.img-placeholder na:
+          <img src="../images/activity-X.jpg" alt="Activity" class="act-card-img">
+          =============================================
+        -->
+        <div class="act-card fade-in">
+          <div class="img-placeholder act-card-img">
+            <span class="ph-icon">📚</span>
+            <span class="ph-text">PICHA — Education & Training<br>600×240px</span>
+          </div>
+          <div class="act-card-body">
+            <span class="act-tag">Education</span>
+            <h3>Education & Training</h3>
+            <p>We equip young people with knowledge, practical skills, and critical thinking tools needed to succeed in today's world. Our workshops, seminars, and mentorship programs are designed to unlock potential.</p>
+          </div>
+        </div>
+
+        <div class="act-card fade-in">
+          <div class="img-placeholder act-card-img">
+            <span class="ph-icon">🤝</span>
+            <span class="ph-text">PICHA — Community Projects<br>600×240px</span>
+          </div>
+          <div class="act-card-body">
+            <span class="act-tag">Community</span>
+            <h3>Community Projects</h3>
+            <p>From clean-up drives to community gardens, our projects tackle real local challenges. We bring youth and community members together to create lasting positive change.</p>
+          </div>
+        </div>
+
+        <div class="act-card fade-in">
+          <div class="img-placeholder act-card-img">
+            <span class="ph-icon">💻</span>
+            <span class="ph-text">PICHA — Innovation & Tech<br>600×240px</span>
+          </div>
+          <div class="act-card-body">
+            <span class="act-tag">Innovation</span>
+            <h3>Innovation & Tech</h3>
+            <p>Technology is a powerful tool for change. We run coding bootcamps, hackathons, and digital literacy programs that help youth harness technology to solve community problems.</p>
+          </div>
+        </div>
+
+        <div class="act-card fade-in">
+          <div class="img-placeholder act-card-img">
+            <span class="ph-icon">⭐</span>
+            <span class="ph-text">PICHA — Leadership Development<br>600×240px</span>
+          </div>
+          <div class="act-card-body">
+            <span class="act-tag">Leadership</span>
+            <h3>Leadership Development</h3>
+            <p>Great leaders are built, not born. Through leadership camps, mentorship circles, and public speaking training, we cultivate confident, compassionate leaders who inspire others.</p>
+          </div>
+        </div>
+
+        <div class="act-card fade-in">
+          <div class="img-placeholder act-card-img">
+            <span class="ph-icon">🎨</span>
+            <span class="ph-text">PICHA — Arts & Culture<br>600×240px</span>
+          </div>
+          <div class="act-card-body">
+            <span class="act-tag">Arts & Culture</span>
+            <h3>Arts & Creative Expression</h3>
+            <p>We believe art is a form of advocacy. Through music, drama, visual arts, and storytelling, youth use creativity to express themselves and amplify community voices.</p>
+          </div>
+        </div>
+
+        <div class="act-card fade-in">
+          <div class="img-placeholder act-card-img">
+            <span class="ph-icon">💪</span>
+            <span class="ph-text">PICHA — Sports & Wellness<br>600×240px</span>
+          </div>
+          <div class="act-card-body">
+            <span class="act-tag">Sports & Wellness</span>
+            <h3>Sports & Wellness</h3>
+            <p>Healthy bodies, healthy minds. Our sports tournaments, wellness workshops, and mental health awareness programs help youth thrive physically and emotionally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-overlay"></div>
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-text">
+          <h2>Want to Get Involved?</h2>
+          <p>Join us as a volunteer, partner, or supporter and help us ignite change.</p>
+        </div>
+        <a href="contact.html" class="btn-outline">Contact Us &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+
+      <a href="../index.html" class="nav-logo">
+
+        <!-- FOOTER LOGO IMAGE -->
+        <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+        <div class="logo-text">
+          <span class="logo-name">IGNITE</span>
+          <span class="logo-tagline">Organization</span>
+        </div>
+
+      </a>
+
+      <p>
+        Empowering youth. Transforming communities. <br>Creating a better future.
+      </p>
+
+    </div>
+
+    <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="contact-item"><span>📍</span><span>Dar es Salaam, Tanzania</span></div>
+          <div class="contact-item"><span>✉️</span><span>info@igniteorg.org</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-yt">▶</div><span>YouTube</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-tt">♪</div><span>TikTok</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-ig">📷</div><span>Instagram</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-fb">f</div><span>Facebook</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ignite Organization. All Rights Reserved.</p>
+        <p>Designed with ❤️ by Ignite Team</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videos – IGNITE Organization</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .videos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:30px; }
+    .video-card { background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.3s; }
+    .video-card:hover { transform:translateY(-5px); }
+    .video-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; cursor:pointer; }
+    .video-thumb .img-placeholder { height:100%; }
+    .video-thumb .play-btn { position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(232,115,10,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;border:2px solid white;transition:all 0.3s; }
+    .video-thumb:hover .play-btn { transform:translate(-50%,-50%) scale(1.1); }
+    .video-info { padding:16px; }
+    .video-info .vid-category { font-size:11px; color:var(--orange); font-weight:700; letter-spacing:2px; text-transform:uppercase; font-family:'Montserrat',sans-serif; margin-bottom:6px; }
+    .video-info h3 { font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:var(--text-dark); margin-bottom:6px; }
+    .video-info .vid-meta { font-size:12px; color:var(--gray); }
+    @media(max-width:992px){ .videos-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:480px){ .videos-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+
+    <!-- LOGO IMAGE -->
+    <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+    <div class="logo-text">
+      <span class="logo-name">IGNITE</span>
+      <span class="logo-tagline">Foundation</span>
+    </div>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="activities.html">Activities</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="videos.html" class="active">Videos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <!-- SOCIAL ICONS (HAZIJAGUSWA) -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IGNITE Navbar</title>
+
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- INTERNAL STYLING -->
+  <style>
+
+    /* NAV SOCIAL CONTAINER */
+    .nav-social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ICON BUTTON STYLE */
+    .nav-social a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #222;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    /* HOVER EFFECT */
+    .nav-social a:hover {
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    /* BRAND COLORS */
+    .nav-social .yt:hover {
+      background: #FF0000;
+    }
+
+    .nav-social .tt:hover {
+      background: #000000;
+    }
+
+    .nav-social .ig:hover {
+      background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    }
+
+    .nav-social .fb:hover {
+      background: #1877F2;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- SOCIAL ICONS -->
+<div class="nav-social">
+
+  <a href="#" class="yt" title="YouTube" target="_blank" rel="noopener">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="#" class="tt" title="TikTok" target="_blank" rel="noopener">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="#" class="ig" title="Instagram" target="_blank" rel="noopener">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="#" class="fb" title="Facebook" target="_blank" rel="noopener">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+</div>
+
+</body>
+</html>
+
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+  <div class="page-header">
+    <h1>Videos</h1>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><span>Videos</span>
+    </div>
+  </div>
+
+  <section style="background:var(--light-gray);">
+    <div class="container">
+      <span class="section-label">See Our Impact</span>
+      <h2 class="section-title">Our <span class="highlight">Videos</span></h2>
+      <div class="underline-bar"></div>
+      <p style="color:var(--gray);max-width:600px;margin:10px 0 0;font-size:15px;">Watch our stories, events, and training sessions. Subscribe to our YouTube channel for more updates.</p>
+
+      <!--
+        =============================================
+        FEATURED VIDEO - WEKA VIDEO YAKO HAPA
+        Option 1 - YouTube embed:
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+            width="100%" height="480" frameborder="0" allowfullscreen
+            style="border-radius:12px;display:block;margin-top:30px;">
+          </iframe>
+        Option 2 - Thumbnail:
+          Weka picha ya video kama thumbnail
+        =============================================
+      -->
+      <div style="margin-top:30px;">
+        <p style="font-size:12px;color:var(--orange);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-family:'Montserrat',sans-serif;margin-bottom:10px;">Featured Video</p>
+        <div class="img-placeholder" style="height:480px;border-radius:12px;position:relative;">
+          <span class="ph-icon">🎬</span>
+          <span class="ph-text">WEKA FEATURED VIDEO HAPA<br>YouTube embed: weka iframe na YouTube link yako<br>au weka thumbnail image</span>
+          <div class="play-btn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;font-size:30px;">▶</div>
+        </div>
+      </div>
+
+      <!-- Video Grid -->
+      <div style="margin-top:50px;">
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;margin-bottom:5px;">More Videos</h3>
+        <div class="underline-bar"></div>
+      </div>
+
+      <div class="videos-grid">
+        <!--
+          =============================================
+          VIDEO CARDS - WEKA VIDEOS ZAKO HAPA
+          Kila card, weka thumbnail ya video:
+          <img src="../images/video-thumb-1.jpg" alt="Video" style="width:100%;height:100%;object-fit:cover;">
+          au YouTube embed iframe
+          =============================================
+        -->
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <div class="img-placeholder" style="height:180px;">
+              <span class="ph-icon">🎬</span>
+              <span class="ph-text">VIDEO 1 THUMBNAIL</span>
+            </div>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="vid-category">Event Highlights</div>
+            <h3>Annual Youth Summit 2024</h3>
+            <div class="vid-meta">1:45 · 1.2K views</div>
+          </div>
+        </div>
+
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <div class="img-placeholder" style="height:180px;">
+              <span class="ph-icon">🎬</span>
+              <span class="ph-text">VIDEO 2 THUMBNAIL</span>
+            </div>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="vid-category">Training</div>
+            <h3>Tech Skills Bootcamp Recap</h3>
+            <div class="vid-meta">3:20 · 890 views</div>
+          </div>
+        </div>
+
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <div class="img-placeholder" style="height:180px;">
+              <span class="ph-icon">🎬</span>
+              <span class="ph-text">VIDEO 3 THUMBNAIL</span>
+            </div>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="vid-category">Community</div>
+            <h3>Community Clean-Up Project</h3>
+            <div class="vid-meta">2:10 · 560 views</div>
+          </div>
+        </div>
+
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <div class="img-placeholder" style="height:180px;">
+              <span class="ph-icon">🎬</span>
+              <span class="ph-text">VIDEO 4 THUMBNAIL</span>
+            </div>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="vid-category">Leadership</div>
+            <h3>Leadership Camp 2023</h3>
+            <div class="vid-meta">4:05 · 740 views</div>
+          </div>
+        </div>
+
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <div class="img-placeholder" style="height:180px;">
+              <span class="ph-icon">🎬</span>
+              <span class="ph-text">VIDEO 5 THUMBNAIL</span>
+            </div>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="vid-category">Stories</div>
+            <h3>Youth Stories: Meet Our Members</h3>
+            <div class="vid-meta">5:30 · 1.5K views</div>
+          </div>
+        </div>
+
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <div class="img-placeholder" style="height:180px;">
+              <span class="ph-icon">🎬</span>
+              <span class="ph-text">VIDEO 6 THUMBNAIL</span>
+            </div>
+            <div class="play-btn">▶</div>
+          </div>
+          <div class="video-info">
+            <div class="vid-category">Innovation</div>
+            <h3>Hackathon 2024 Highlights</h3>
+            <div class="vid-meta">3:45 · 620 views</div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        BADILISHA href na YouTube channel link yako halisi
+      -->
+      <div style="text-align:center;margin-top:40px;">
+        <a href="#" class="btn-primary" target="_blank" rel="noopener">
+          ▶ View Full YouTube Channel
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+   <div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+
+      <a href="../index.html" class="nav-logo">
+
+        <!-- FOOTER LOGO IMAGE -->
+        <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+        <div class="logo-text">
+          <span class="logo-name">IGNITE</span>
+          <span class="logo-tagline">Organization</span>
+        </div>
+
+      </a>
+
+      <p>
+        Empowering youth. Transforming communities. <br>Creating a better future.
+      </p>
+
+    </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="contact-item"><span>📍</span><span>Dar es Salaam, Tanzania</span></div>
+          <div class="contact-item"><span>✉️</span><span>info@igniteorg.org</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-yt">▶</div><span>YouTube</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-tt">♪</div><span>TikTok</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-ig">📷</div><span>Instagram</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-fb">f</div><span>Facebook</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ignite Organization. All Rights Reserved.</p>
+        <p>Designed with ❤️ by Ignite Team</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – IGNITE Organization</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:30px; }
+    .blog-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.3s; }
+    .blog-card:hover { transform:translateY(-5px); }
+    .blog-img { width:100%; height:200px; object-fit:cover; display:block; }
+    .blog-body { padding:20px; }
+    .blog-tag { display:inline-block; background:rgba(232,115,10,0.1); color:var(--orange); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; margin-bottom:10px; }
+    .blog-body h3 { font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:var(--text-dark); margin-bottom:8px; line-height:1.4; }
+    .blog-body p { font-size:13px; color:var(--gray); line-height:1.6; margin-bottom:15px; }
+    .blog-meta { font-size:12px; color:var(--gray); display:flex; justify-content:space-between; align-items:center; padding-top:12px; border-top:1px solid #F0F0F0; }
+    .blog-meta a { color:var(--orange); text-decoration:none; font-weight:700; }
+    @media(max-width:992px){ .blog-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:480px){ .blog-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+
+    <!-- LOGO IMAGE -->
+    <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+    <div class="logo-text">
+      <span class="logo-name">IGNITE</span>
+      <span class="logo-tagline">Foundation</span>
+    </div>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="activities.html">Activities</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <!-- SOCIAL ICONS (HAZIJAGUSWA) -->
+    <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- INTERNAL STYLING -->
+  <style>
+
+    /* NAV SOCIAL CONTAINER */
+    .nav-social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ICON BUTTON STYLE */
+    .nav-social a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #222;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    /* HOVER EFFECT */
+    .nav-social a:hover {
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    /* BRAND COLORS */
+    .nav-social .yt:hover {
+      background: #FF0000;
+    }
+
+    .nav-social .tt:hover {
+      background: #000000;
+    }
+
+    .nav-social .ig:hover {
+      background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    }
+
+    .nav-social .fb:hover {
+      background: #1877F2;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- SOCIAL ICONS -->
+<div class="nav-social">
+
+  <a href="#" class="yt" title="YouTube" target="_blank" rel="noopener">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="#" class="tt" title="TikTok" target="_blank" rel="noopener">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="#" class="ig" title="Instagram" target="_blank" rel="noopener">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="#" class="fb" title="Facebook" target="_blank" rel="noopener">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+</div>
+
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+  <div class="page-header">
+    <h1>Blog</h1>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><span>Blog</span>
+    </div>
+  </div>
+
+  <section style="background:var(--light-gray);">
+    <div class="container">
+      <span class="section-label">Our Stories</span>
+      <h2 class="section-title">Latest <span class="highlight">News & Updates</span></h2>
+      <div class="underline-bar"></div>
+
+      <div class="blog-grid">
+        <!--
+          =============================================
+          BLOG CARDS - WEKA PICHA NA CONTENT YAKO
+          Badilisha kila div.img-placeholder na:
+          <img src="../images/blog-1.jpg" alt="Blog" class="blog-img">
+          Pia badilisha maandishi ya kila post
+          =============================================
+        -->
+        <div class="blog-card fade-in">
+          <div class="img-placeholder blog-img">
+            <span class="ph-icon">📰</span>
+            <span class="ph-text">PICHA — Blog Post 1<br>600×200px</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">Events</span>
+            <h3>Annual Youth Summit 2024: Highlights & Key Takeaways</h3>
+            <p>Over 200 youth gathered for our biggest annual event yet. Here's what happened and what we learned...</p>
+            <div class="blog-meta">
+              <span>April 10, 2024</span>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card fade-in">
+          <div class="img-placeholder blog-img">
+            <span class="ph-icon">📰</span>
+            <span class="ph-text">PICHA — Blog Post 2<br>600×200px</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">Innovation</span>
+            <h3>How Technology is Changing Youth Empowerment in Tanzania</h3>
+            <p>From coding bootcamps to digital solutions — young people are leading the charge with tech...</p>
+            <div class="blog-meta">
+              <span>March 22, 2024</span>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card fade-in">
+          <div class="img-placeholder blog-img">
+            <span class="ph-icon">📰</span>
+            <span class="ph-text">PICHA — Blog Post 3<br>600×200px</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">Community</span>
+            <h3>Our Community Clean-Up Project: Building a Cleaner Future</h3>
+            <p>Volunteers came together to transform their neighborhood and create lasting change...</p>
+            <div class="blog-meta">
+              <span>February 15, 2024</span>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card fade-in">
+          <div class="img-placeholder blog-img">
+            <span class="ph-icon">📰</span>
+            <span class="ph-text">PICHA — Blog Post 4<br>600×200px</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">Leadership</span>
+            <h3>5 Lessons from Our Youth Leadership Camp 2023</h3>
+            <p>What does it take to be a leader? Our camp participants share their most important lessons...</p>
+            <div class="blog-meta">
+              <span>January 8, 2024</span>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card fade-in">
+          <div class="img-placeholder blog-img">
+            <span class="ph-icon">📰</span>
+            <span class="ph-text">PICHA — Blog Post 5<br>600×200px</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">Stories</span>
+            <h3>Meet Grace: From Volunteer to Program Leader</h3>
+            <p>Grace joined Ignite as a volunteer three years ago. Today, she leads our flagship program...</p>
+            <div class="blog-meta">
+              <span>December 2023</span>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card fade-in">
+          <div class="img-placeholder blog-img">
+            <span class="ph-icon">📰</span>
+            <span class="ph-text">PICHA — Blog Post 6<br>600×200px</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-tag">Partnerships</span>
+            <h3>Ignite Partners with Local Schools to Expand Education Programs</h3>
+            <p>A new partnership will bring our training programs to 5 more schools across Dar es Salaam...</p>
+            <div class="blog-meta">
+              <span>November 2023</span>
+              <a href="#">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <a href="../index.html" class="nav-logo">
+
+        <!-- FOOTER LOGO IMAGE -->
+        <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
+
+        <div class="logo-text">
+          <span class="logo-name">IGNITE</span>
+          <span class="logo-tagline">Organization</span>
+        </div>
+
+      </a>
+
+      <p>
+        Empowering youth. Transforming communities. <br>
+        Creating a better future.
+      </p>
+    </div>
+
+    <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="contact-item"><span>📍</span><span>Dar es Salaam, Tanzania</span></div>
+          <div class="contact-item"><span>✉️</span><span>info@igniteorg.org</span></div>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-yt">▶</div><span>YouTube</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-tt">♪</div><span>TikTok</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-ig">📷</div><span>Instagram</span></a>
+            <a href="#" class="social-link" target="_blank"><div class="social-icon s-fb">f</div><span>Facebook</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ignite Organization. All Rights Reserved.</p>
+        <p>Designed with ❤️ by Ignite Team</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
