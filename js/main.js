@@ -120,3 +120,111 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+
+// ============================
+// BLOG LOADER (JSON SYSTEM)
+// ============================
+
+const blogGrid = document.getElementById("blogGrid");
+
+if (blogGrid) {
+  fetch("../data/blog.json")
+    .then(res => res.json())
+    .then(posts => {
+
+      blogGrid.innerHTML = posts.map(post => `
+        <div class="blog-card fade-in">
+
+          <img src="${post.image}" class="blog-img" alt="${post.title}">
+
+          <div class="blog-body">
+            <span class="blog-tag">${post.category}</span>
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+
+            <div class="blog-meta">
+              <span>${post.date}</span>
+              <a href="${post.link}">Read More →</a>
+            </div>
+          </div>
+
+        </div>
+      `).join('');
+
+    })
+    .catch(err => console.log("Error loading blog:", err));
+}
+
+
+
+
+function createBlogCard(post) {
+  return `
+    <div class="blog-card fade-in">
+      <img src="${post.image}" alt="${post.title}" class="blog-img"/>
+
+      <div class="blog-body">
+        <span class="blog-tag">${post.category}</span>
+        <h3>${post.title}</h3>
+        <p>${post.description}</p>
+
+        <div class="blog-meta">
+          <span>${post.date}</span>
+          <a href="${post.link}">Read More →</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+c// ============================
+// BLOG LOADER (JSON SYSTEM)
+// ============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const blogGrid = document.getElementById("blogGrid");
+
+  if (!blogGrid) return;
+
+  fetch("../data/blog.json")
+    .then(res => res.json())
+    .then(posts => {
+
+      blogGrid.innerHTML = posts.map(post => `
+        <div class="blog-card fade-in">
+
+          <img src="${post.image}" class="blog-img" alt="${post.title}">
+
+          <div class="blog-body">
+            <span class="blog-tag">${post.category}</span>
+            <h3>${post.title}</h3>
+            <p>${post.excerpt || post.description}</p>
+
+            <div class="blog-meta">
+              <span>${post.date}</span>
+              <a href="${post.link}">Read More →</a>
+            </div>
+          </div>
+
+        </div>
+      `).join("");
+
+      // re-attach fade-in observer
+      const fadeEls = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      });
+
+      fadeEls.forEach(el => observer.observe(el));
+
+    })
+    .catch(err => console.log("BLOG ERROR:", err));
+
+});

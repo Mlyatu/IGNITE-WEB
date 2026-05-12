@@ -2,6 +2,20 @@
    IGNITE ORGANIZATION - MAIN STYLESHEET
    ============================================= */
 
+   html, body {
+  width: 100%;
+  overflow-x: hidden; /* HII INAZUIA PAGE KUVUTIKA SIDEWAYS */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap');
 
 :root {
@@ -30,6 +44,7 @@ body {
   color: var(--text-dark);
   background: var(--white);
   overflow-x: hidden;
+    touch-action: pan-y;
 }
 
 /* ---- NAVBAR ---- */
@@ -400,53 +415,58 @@ section { padding: 80px 0; }
   font-size: 15px;
 }
 
-.cards-grid {
+..cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
+  margin-top: 30px;
+  align-items: stretch;
 }
 
+/* CARD */
 .info-card {
-  background: var(--white);
-  border: 1px solid #E8E8E8;
-  border-radius: 8px;
-  padding: 30px 20px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
-  transition: all 0.3s;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
+/* HOVER STABLE */
 .info-card:hover {
-  border-color: var(--orange);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(232,115,10,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
+/* ICON */
 .card-icon {
-  width: 55px; height: 55px;
+  width: 60px;
+  height: 60px;
   margin: 0 auto 15px;
-  background: rgba(232,115,10,0.08);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
 }
 
+.card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TEXT FIX */
 .info-card h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
   margin-bottom: 10px;
-  color: var(--text-dark);
+  font-size: 18px;
 }
 
 .info-card p {
-  font-size: 13px;
-  color: var(--gray);
+  font-size: 14px;
+  color: #666;
   line-height: 1.6;
 }
-
 /* ---- ACTIVITIES ---- */
 .activities-section {
   background: var(--dark);
@@ -730,7 +750,90 @@ footer {
 }
 .footer-col ul li a:hover { color: var(--orange); }
 
+
+/* CONTACT ITEMS */
 .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #aaa;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+
+.contact-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #ff7a00;
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  color: #fff;
+}
+
+.contact-item a:hover::after {
+  width: 100%;
+}
+
+.contact-item i {
+  color: #ff7a00;
+  font-size: 16px;
+  min-width: 20px;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.social-link i {
+  width: 35px;
+  height: 35px;
+  background: #222;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+/* HOVER COLORS */
+.social-link:hover {
+  color: #fff;
+}
+
+.social-link:hover i {
+  transform: scale(1.1);
+}
+
+.social-link:nth-child(1):hover i { background: #FF0000; }
+.social-link:nth-child(2):hover i { background: #000000; }
+.social-link:nth-child(3):hover i { background: #E1306C; }
+.social-link:nth-child(4):hover i { background: #1877F2; }
+
+
+/* .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -739,7 +842,7 @@ footer {
   font-size: 13px;
 }
 
-.contact-item span:first-child { color: var(--orange); margin-top: 2px; }
+.contact-item span:first-child { color: var(--orange); margin-top: 2px; } */
 
 /* =============================================
    SOCIAL MEDIA LINKS - WEKA LINKS ZAKO HAPA
@@ -751,7 +854,53 @@ footer {
   gap: 10px;
 }
 
+
+/* SOCIAL LINKS */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* ICON BASE */
+.social-link i {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* 🔥 BRAND COLORS (ZIONEKANE MOJA KWA MOJA) */
+.social-link:nth-child(1) i { background: #FF0000; }  /* YouTube */
+.social-link:nth-child(2) i { background: #000000; }  /* TikTok */
+.social-link:nth-child(3) i { background: #E1306C; }  /* Instagram */
+.social-link:nth-child(4) i { background: #1877F2; }  /* Facebook */
+
+/* HOVER EFFECT (kidogo tu enhance) */
+.social-link:hover i {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.social-link:hover {
+  color: #fff;
+}
+
+/* .social-link {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -762,7 +911,7 @@ footer {
   padding: 6px 0;
 }
 
-.social-link:hover { color: white; transform: translateX(5px); }
+.social-link:hover { color: white; transform: translateX(5px); } */
 
 .social-icon {
   width: 30px; height: 30px;
@@ -887,4 +1036,63 @@ footer {
   .activities-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+  align-items: stretch;
+}
+
+.info-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  height: 100%;
+}
+
+.card-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
