@@ -3,24 +3,43 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog – IGNITE Organization</title>
+  <title>Blog – IGNITE Foundation</title>
   <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/blog.css"/>
-
-    
+  <style>
+    .blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(350px,1fr)); gap:30px; margin-top:30px; }
+    .blog-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s; cursor:pointer; }
+    .blog-card:hover { transform:translateY(-8px); box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+    .blog-img { width:100%; height:220px; object-fit:cover; display:block; }
+    .blog-body { padding:24px; }
+    .blog-meta { display:flex; gap:12px; font-size:12px; color:var(--gray); margin-bottom:10px; font-weight:600; }
+    .blog-category { background:rgba(232,115,10,0.1); color:var(--orange); padding:4px 10px; border-radius:12px; text-transform:uppercase; }
+    .blog-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; color:var(--text-dark); margin-bottom:12px; line-height:1.4; }
+    .blog-excerpt { font-size:14px; color:var(--gray); line-height:1.6; margin-bottom:15px; }
+    .blog-read-more { color:var(--orange); font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+    .blog-read-more:hover { text-decoration:underline; }
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center; }
+    .modal.active { display:flex; }
+    .modal-content { background:white; border-radius:12px; padding:40px; max-width:700px; width:90%; max-height:80vh; overflow-y:auto; position:relative; }
+    .modal-close { position:absolute; top:15px; right:20px; font-size:28px; cursor:pointer; background:none; border:none; color:var(--gray); }
+    .modal-close:hover { color:var(--text-dark); }
+    .modal-img { width:100%; height:300px; object-fit:cover; border-radius:8px; margin-bottom:20px; }
+    .modal-title { font-family:'Montserrat',sans-serif; font-weight:800; font-size:28px; color:var(--text-dark); margin-bottom:12px; }
+    .modal-meta { display:flex; gap:20px; font-size:13px; color:var(--gray); margin-bottom:25px; padding-bottom:15px; border-bottom:1px solid #eee; }
+    .modal-content-text { font-size:15px; color:var(--gray); line-height:1.8; }
+    .no-posts { text-align:center; padding:60px 20px; color:var(--gray); }
+    .no-posts p { font-size:16px; }
+    @media(max-width:768px) { .blog-grid{grid-template-columns:1fr;} .modal-content{width:95%;padding:30px;} }
+  </style>
 </head>
 <body>
+
 <nav class="navbar">
   <a href="../index.html" class="nav-logo">
-
-    <!-- LOGO IMAGE -->
     <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
-
     <div class="logo-text">
       <span class="logo-name">IGNITE</span>
-      <span class="logo-tagline">Foundation</span>
+      <span class="logo-tagline">Education Foundation</span>
     </div>
-
   </a>
 
   <ul class="nav-links">
@@ -33,92 +52,39 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
 
-  <!-- SOCIAL ICONS (HAZIJAGUSWA) -->
-    <!-- FONT AWESOME ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- INTERNAL STYLING -->
   <style>
-
-    /* NAV SOCIAL CONTAINER */
-    .nav-social {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    /* ICON BUTTON STYLE */
-    .nav-social a {
-      width: 42px;
-      height: 42px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      background: #222;
-      color: #fff;
-      font-size: 18px;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    /* HOVER EFFECT */
-    .nav-social a:hover {
-      transform: translateY(-4px) scale(1.1);
-    }
-
-    /* BRAND COLORS */
-    .nav-social .yt:hover {
-      background: #FF0000;
-    }
-
-    .nav-social .tt:hover {
-      background: #000000;
-    }
-
-    .nav-social .ig:hover {
-      background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
-    }
-
-    .nav-social .fb:hover {
-      background: #1877F2;
-    }
-
+    .nav-social { display: flex; gap: 12px; align-items: center; }
+    .nav-social a { width: 42px; height: 42px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: #222; color: #fff; font-size: 18px; text-decoration: none; transition: 0.3s ease; }
+    .nav-social a:hover { transform: translateY(-4px) scale(1.1); }
+    .nav-social .yt:hover { background: #FF0000; }
+    .nav-social .tt:hover { background: #000000; }
+    .nav-social .ig:hover { background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); }
+    .nav-social .fb:hover { background: #1877F2; }
   </style>
-</head>
 
-<body>
-
-<!-- SOCIAL ICONS -->
-<div class="nav-social">
-
-  <a href="#" class="yt" title="YouTube" target="_blank" rel="noopener">
-    <i class="fa-brands fa-youtube"></i>
-  </a>
-
-  <a href="#" class="tt" title="TikTok" target="_blank" rel="noopener">
-    <i class="fa-brands fa-tiktok"></i>
-  </a>
-
-  <a href="#" class="ig" title="Instagram" target="_blank" rel="noopener">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-
-  <a href="#" class="fb" title="Facebook" target="_blank" rel="noopener">
-    <i class="fa-brands fa-facebook-f"></i>
-  </a>
-
-</div>
+  <div class="nav-social">
+    <a href="https://www.youtube.com/@Ignite_Foundation" class="yt" title="YouTube" target="_blank" rel="noopener">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://vm.tiktok.com/ZS9F7sL3AQNpy-uKpqt/" class="tt" title="TikTok" target="_blank" rel="noopener">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a href="https://www.instagram.com/ignite_foundation1?igsh=cXJjMDQ1c2l2ZGg5" class="ig" title="Instagram" target="_blank" rel="noopener">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61589353885961" class="fb" title="Facebook" target="_blank" rel="noopener">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
 
   <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
   <div class="page-header">
-    <h1>Blog</h1>
+    <h1>Blog & Events</h1>
     <div class="breadcrumb">
       <a href="../index.html">Home</a><span>/</span><span>Blog</span>
     </div>
@@ -126,49 +92,46 @@
 
   <section style="background:var(--light-gray);">
     <div class="container">
-      <span class="section-label">Our Stories</span>
-      <h2 class="section-title">Latest <span class="highlight">News & Updates</span></h2>
+      <span class="section-label">Latest Updates</span>
+      <h2 class="section-title">Stories & <span class="highlight">Events</span></h2>
       <div class="underline-bar"></div>
 
-       
+      <div id="blog-container" class="blog-grid">
+        <!-- Blog posts loaded here by JavaScript -->
+      </div>
 
-<section style="background:var(--light-gray);">
-  <div class="container">
-
-    <span class="section-label">Our Stories</span>
-    <h2 class="section-title">
-      Latest <span class="highlight">News & Updates</span>
-    </h2>
-
-    <div class="underline-bar"></div>
-
-    <!-- 👇 HAPA NDIPO BLOG ZOTE ZITATOKA -->
-    <div class="blog-grid" id="blogGrid"></div>
-
-  </div>
-</section>
-
+      <div id="no-posts" class="no-posts" style="display:none;">
+        <p>No blog posts yet. Check back soon for updates!</p>
       </div>
     </div>
   </section>
 
+  <!-- Modal for reading full post -->
+  <div id="post-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <img id="modal-img" src="" alt="" class="modal-img">
+      <h2 id="modal-title" class="modal-title"></h2>
+      <div class="modal-meta">
+        <span id="modal-author"></span>
+        <span id="modal-date"></span>
+        <span id="modal-category" class="blog-category"></span>
+      </div>
+      <div id="modal-text" class="modal-content-text"></div>
+    </div>
+  </div>
+
   <footer>
 <div class="container">
   <div class="footer-grid">
-    <!-- Brand -->
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="margin-bottom:10px;">
-
-        <!-- FOOTER LOGO IMAGE -->
+      <a href="../index.html" class="nav-logo" style="margin-bottom:10px;">
         <img src="../images/logo.png" alt="IGNITE Logo" class="logo-img">
-
         <div class="logo-text">
           <span class="logo-name">IGNITE</span>
-          <span class="logo-tagline">Foundation</span>
+          <span class="logo-tagline">Education Foundation</span>
         </div>
-
       </a>
-
       <p>
         Empowering youth.
         Transforming communities.<br>
@@ -176,97 +139,131 @@
       </p>
     </div>
 
-        <!-- Quick Links -->
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="videos.html">Videos</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
 
-        <!-- Contact -->
-        <div class="footer-col">
-          <h4>Contact Us</h4>
-          <!--
-            =============================================
-            CONTACT INFO - WEKA MAWASILIANO YAKO
-            Badilisha address, simu, email, na website
-            =============================================
-          -->
-        <div class="contact-item">
-  <i class="fa-solid fa-location-dot"></i>
-  <span>Dodoma, Tanzania</span>
-</div>
-
-<div class="contact-item">
-  <i class="fa-solid fa-phone"></i>
-  <span>+255 799 870 448</span>
-</div>
-
-<div class="contact-item">
-  <i class="fa-solid fa-envelope"></i>
-  <!-- <span>info@igniteorg.org</span> -->
-<a href="mailto:info@igniteorg.org">ignitefoundation.edu@gmail.com</a>
-</div>
-
-<div class="contact-item">
-  <i class="fa-solid fa-globe"></i>
-  <!-- <span>www.igniteorg.org</span> -->
-   <a href="https://www.igniteorg.org" target="_blank">www.igniteorg.org</a>
-</div>
-        </div>
-
-        <!-- Social Media -->
-        <div class="footer-col">
-          <h4>Follow Us</h4>
-          <!--
-            =============================================
-            SOCIAL MEDIA LINKS - WEKA LINKS ZAKO HAPA
-            Badilisha kila href="#" na link yako halisi:
-            YouTube:  https://youtube.com/@YourChannel
-            TikTok:   https://tiktok.com/@YourAccount
-            Instagram: https://instagram.com/YourAccount
-            Facebook:  https://facebook.com/YourPage
-            =============================================
-          -->
-          <div class="social-links">
-
-  <a href="https://www.youtube.com/@Ignite_Foundation" class="social-link" target="_blank">
-    <i class="fab fa-youtube"></i>
-    <span>YouTube</span>
-  </a>
-
-  <a href="#" class="social-link" target="_blank">
-    <i class="fab fa-tiktok"></i>
-    <span>TikTok</span>
-  </a>
-
-  <a href="#" class="social-link" target="_blank">
-    <i class="fab fa-instagram"></i>
-    <span>Instagram</span>
-  </a>
-
-  <a href="#" class="social-link" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-    <span>Facebook</span>
-  </a>
-
-</div>
-        </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Chato Geita, Tanzania</span>
       </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 Ignite Foundation. All Rights Reserved.</p>
-        <p>Designed with ❤️ by Ignite Team</p>
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>+255 799 870 448</span>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:ignitefoundation.edu@gmail.com">ignitefoundation.edu@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-globe"></i>
+        <a href="https://www.igniteorg.org" target="_blank">www.igniteorg.org</a>
       </div>
     </div>
+
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="https://www.youtube.com/@Ignite_Foundation" class="social-link" target="_blank">
+          <i class="fab fa-youtube"></i>
+          <span>YouTube</span>
+        </a>
+        <a href="https://vm.tiktok.com/ZS9F7sL3AQNpy-uKpqt/" class="social-link" target="_blank">
+          <i class="fab fa-tiktok"></i>
+          <span>TikTok</span>
+        </a>
+        <a href="https://www.instagram.com/ignite_foundation1?igsh=cXJjMDQ1c2l2ZGg5" class="social-link" target="_blank">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61589353885961" class="social-link" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Ignite Education Foundation. All Rights Reserved.</p>
+    <p>Designed with <i class="fa-solid fa-heart"></i> by Ignite Team</p>
+  </div>
+</div>
   </footer>
-  <script src="../js/main.js"></script>
+
+  <script>
+    async function loadBlogPosts() {
+      try {
+        const response = await fetch('../data/blog.json');
+        const posts = await response.json();
+        
+        const container = document.getElementById('blog-container');
+        const noPosts = document.getElementById('no-posts');
+        
+        if (posts.length === 0) {
+          noPosts.style.display = 'block';
+          return;
+        }
+
+        posts.forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'blog-card fade-in';
+          card.onclick = () => openModal(post);
+          
+          card.innerHTML = `
+            <img src="${post.image}" alt="${post.title}" class="blog-img">
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span class="blog-category">${post.category}</span>
+                <span>${post.date}</span>
+              </div>
+              <h3 class="blog-title">${post.title}</h3>
+              <p class="blog-excerpt">${post.excerpt}</p>
+              <a href="#" class="blog-read-more" onclick="return false;">Read More →</a>
+            </div>
+          `;
+          
+          container.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+      }
+    }
+
+    function openModal(post) {
+      document.getElementById('modal-img').src = post.image;
+      document.getElementById('modal-title').textContent = post.title;
+      document.getElementById('modal-author').textContent = `By ${post.author}`;
+      document.getElementById('modal-date').textContent = post.date;
+      document.getElementById('modal-category').textContent = post.category;
+      document.getElementById('modal-text').textContent = post.content;
+      document.getElementById('post-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('post-modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('post-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    loadBlogPosts();
+  </script>
 </body>
 </html>

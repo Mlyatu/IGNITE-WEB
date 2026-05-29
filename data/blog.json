@@ -1,10 +1,123 @@
+
 [
   {
-    "title": "Annual Youth Summit 2024",
+    "id": 1,
+    "title": "Breaking Barriers: Our First Sign Language Training",
+    "date": "May 15, 2026",
+    "author": "Ignite Team",
+    "category": "Education",
+    "image": "../images/wedo/picture1.png",
+    "excerpt": "We launched our first sign language training program with 50 participants eager to break communication barriers.",
+    "content": "Our inaugural sign language training program brought together 50 passionate individuals. Through interactive workshops and certified instructors, we created an inclusive space where deaf and hearing participants learned together. The response was overwhelming, and we're excited to continue this journey of inclusion and empowerment. Participants reported gaining new skills and a deeper understanding of deaf culture."
+  },
+  {
+    "id": 2,
+    "title": "STEM Bootcamp Success: 30 Youth Complete Coding Program",
+    "date": "May 10, 2026",
+    "author": "Tech Coordinator",
+    "category": "STEM",
+    "image": "../images/wedo/picture3.jpeg",
+    "excerpt": "Our first STEM coding bootcamp empowered 30 young people, especially women and persons with disabilities.",
+    "content": "This month, we completed our first intensive STEM bootcamp focused on web development and coding fundamentals. With a special focus on women and persons with disabilities, 30 graduates are now equipped with practical programming skills. Many have already started freelance projects and are building their portfolios! The bootcamp included mentorship from professional developers and hands-on projects."
+  },
+  {
+    "id": 3,
+    "title": "Community Impact: 200+ Trained in Sign Language",
+    "date": "May 1, 2026",
+    "author": "Ignite Team",
+    "category": "Community",
+    "image": "../images/wedo/picture2.png",
+    "excerpt": "A milestone achievement - we've reached 200 people trained in sign language across multiple communities.",
+    "content": "From Chato to surrounding regions, our sign language training has touched 200 lives. Each person trained becomes a bridge - connecting deaf and hearing communities, fostering understanding, and breaking down communication barriers. This is just the beginning of our mission to create a truly inclusive society. We're proud of the impact we've made and excited for what's to come."
+  },
+  {
+    "id": 4,
+    "title": "Annual Youth Summit 2026 - Save the Date!",
+    "date": "May 25, 2026",
+    "author": "Event Coordinator",
     "category": "Events",
-    "date": "April 10, 2024",
-    "image": "../images/blog-1.jpg",
-    "description": "Over 200 youth gathered for our biggest annual event yet...",
-    "link": "post-1.html"
+    "image": "../images/gallery/dd/1.jpg",
+    "excerpt": "Join us for our biggest event of the year! Youth summit bringing together young leaders from across the region.",
+    "content": "Mark your calendars! The Annual Youth Summit 2026 is coming. This year's theme focuses on 'Innovation & Social Impact.' We're bringing together over 500 young leaders for three days of workshops, networking, and inspiration. Featured speakers include successful entrepreneurs and social activists. Early bird registration opens June 1st with special discounts for group registrations. This is an opportunity not to be missed!"
+  },
+  {
+    "id": 5,
+    "title": "Leadership Camp 2024: Transforming Young Leaders",
+    "date": "May 20, 2026",
+    "author": "Programs Director",
+    "category": "Leadership",
+    "image": "../images/gallery/ee/2.jpg",
+    "excerpt": "Our intensive leadership camp equipped 45 youth with essential skills for community leadership and personal growth.",
+    "content": "This year's Leadership Camp exceeded all expectations! With 45 participants aged 16-24, we conducted intensive workshops on public speaking, team management, conflict resolution, and strategic thinking. Participants worked on real community projects, creating action plans they'll implement in their own communities. Alumni feedback shows 94% feel more confident in their leadership abilities. Applications for next year's camp are already rolling in!"
+  },
+  {
+    "id": 6,
+    "title": "Tech Skills Bootcamp 2024 - Graduates Ready for Employment",
+    "date": "May 18, 2026",
+    "author": "Tech Coordinator",
+    "category": "STEM",
+    "image": "../images/gallery/ee/3.jpg",
+    "excerpt": "30 graduates completed our intensive tech bootcamp and are now job-ready with certified web development skills.",
+    "content": "Our Tech Skills Bootcamp has successfully trained 30 youth in web development, UI/UX design, and digital marketing. The program included 200+ hours of hands-on coding, project-based learning, and mentorship from industry professionals. Three graduates have already secured employment, five have started freelance projects, and others are continuing their education in tech. We're proud of their achievements!"
+  },
+  {
+    "id": 7,
+    "title": "Community Clean-Up Drive: Environmental Responsibility",
+    "date": "May 12, 2026",
+    "author": "Sustainability Team",
+    "category": "Community",
+    "image": "../images/gallery/dd/4.jpg",
+    "excerpt": "120 volunteers participated in our monthly community clean-up, removing 2 tons of waste and planting 100 trees.",
+    "content": "On May 12th, our community came together for an environmental action day. With 120 volunteers, we cleaned up public spaces in Chato and surrounding areas, collected over 2 tons of recyclable materials, and planted 100 fruit trees. This initiative promotes environmental consciousness and community ownership. We're making our community greener, one clean-up at a time. Join us next month!"
+  },
+  {
+    "id": 8,
+    "title": "Mentorship Program Launch: Connecting Youth with Professionals",
+    "date": "May 8, 2026",
+    "author": "Programs Manager",
+    "category": "Education",
+    "image": "../images/gallery/ee/5.jpg",
+    "excerpt": "We've launched a structured mentorship program pairing 80 young people with experienced professionals across various industries.",
+    "content": "Our new Mentorship Program connects youth with professionals in tech, business, agriculture, healthcare, and education. 80 mentee-mentor pairs have been matched based on career interests and skills. The program spans 6 months with monthly workshops, regular one-on-one sessions, and networking events. Early feedback from participants is incredibly positive, with mentees gaining practical insights and professional connections. Applications for the next cohort open soon!"
+  },
+  {
+    "id": 9,
+    "title": "Hackathon 2024 Success: Innovation Meets Social Impact",
+    "date": "May 5, 2026",
+    "author": "Innovation Lead",
+    "category": "STEM",
+    "image": "../images/gallery/dd/5.jpg",
+    "excerpt": "Our first hackathon brought together 100+ developers and innovators to solve real community challenges.",
+    "content": "The Ignite Hackathon 2024 was an incredible success! Over 100 participants formed 25 teams to develop tech solutions for real community problems. Winners included an AI-powered agricultural app, a mobile platform for inclusive education, and an app connecting micro-entrepreneurs with markets. The winning solutions received seed funding and mentorship to develop into viable products. We're excited to see these innovations create real impact!"
+  },
+  {
+    "id": 10,
+    "title": "Youth Stories: Meet Our Success Stories",
+    "date": "April 28, 2026",
+    "author": "Communications Team",
+    "category": "Community",
+    "image": "../images/gallery/ee/1.jpg",
+    "excerpt": "Read inspiring stories of young people whose lives have been transformed through our programs.",
+    "content": "Meet Ayanthi, who was shy and uncertain about her future. After attending our leadership camp, she's now leading a youth group in her village. Meet Emmanuel, who came to our coding bootcamp with zero tech experience - he's now building websites for local businesses. Their stories represent the transformation happening across our community. Every day, we see young people gaining confidence, skills, and hope. These are the stories that fuel our mission!"
+  },
+  {
+    "id": 11,
+    "title": "Scholarship Opportunities for Underprivileged Youth",
+    "date": "April 20, 2026",
+    "author": "Scholarships Coordinator",
+    "category": "Education",
+    "image": "../images/gallery/dd/6.jpg",
+    "excerpt": "Ignite Foundation announces 50 scholarships for deserving youth to pursue higher education and vocational training.",
+    "content": "We're excited to announce 50 full scholarships covering tuition, learning materials, and monthly allowances for underprivileged but talented youth. These scholarships are available for university education, vocational training, and professional courses. Eligible applicants must be between 18-35 years old, demonstrate financial need, and show commitment to community development. Apply by June 15th, 2026. Visit our scholarship portal for detailed criteria and application requirements."
+  },
+  {
+    "id": 12,
+    "title": "Women in Tech Initiative: Breaking Gender Barriers",
+    "date": "April 15, 2026",
+    "author": "Gender Equality Officer",
+    "category": "STEM",
+    "image": "../images/gallery/ee/4.jpg",
+    "excerpt": "Our Women in Tech initiative has empowered 60+ women to pursue careers in technology and innovation.",
+    "content": "With only 15% of tech professionals being women, we launched the Women in Tech Initiative. So far, 60+ young women have completed our bootcamps, and 35% have secured tech jobs or started their own tech businesses. Through mentorship, targeted training, and industry connections, we're creating pathways for women in STEM. Our goal is to reach 200 women by end of 2026 and change the face of tech in our region!"
   }
 ]
